@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <title>Form</title>
+</head>
+<body>
+
+    <form method="post">
+        <input type="text" name="username" placeholder="username" value="{{ request.form['username'] }}"></input>
+        <input type="text" name="first_name" placeholder="first name" value="{{ request.form['first_name'] }}"></input>
+        <input type="text" name="last_name" placeholder="last name" value="{{ request.form['last_name'] }}"></input>
+        <button type="submit">Submit</button>
+    </form>
+
+    <hr>
+
+    <table>
+    {% for username, person in data.items() %}
+    <tr>
+        <td>{{ person.username }}</td>
+        <td>{{ person.first_name }}</td>
+        <td>{{ person.last_name }}</td>
+    </tr>
+    {% endfor %}
+    </table>
+
+</body>
+</html>
